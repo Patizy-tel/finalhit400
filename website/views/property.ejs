@@ -1,0 +1,127 @@
+<% include partials/header.ejs%>
+
+      <div class="content">
+
+        <div class="header bg-white pb-8 pt-5 pt-md-8">
+          <div class="container-fluid">
+            <div class="header-body">
+
+            
+        <div class="container" style="width: 1200px;">
+
+          <div class="card shadow">
+
+            <!--
+            <div class="card-header border-0">
+              <h1 lass="mb-0"><span id="nome"><%= propertyName %></span></h1>
+            </div>
+            -->
+            
+            <div class="row mx-3">
+              <div class="col my-3">
+                <h1 lass="mb-0"><span id="nome"><%= propertyName %></span></h1>
+                <h2 style="color:#000099">$<%= propertyPrice.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,') %></h2>
+                <p>
+                  <img src="../uploads/pin.png" class="img-fluid" alt="Responsive image" width="13px">
+                  <%= propertyAddress %>
+                </p>
+                <hr style="width: 100%; color:gray; height: 0px; background-color:white" />
+                <p style="font-family:Arial"><%= propertyDescription %></p>
+                <!--Ubuntu-->
+                <br>
+                <table class="table align-items-center">
+                  <thead class="thead-light">
+                    <tr>
+                      <th scope="col">Total supply</th>
+                      <th scope="col">Tokens left</th>
+                      <th scope="col">My balance</th>
+                      <th scope="col"><%= tokenSymbol %> token price</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list">
+                    <tr>
+                      <td><span id="totalSupply_1"></td>
+                      <td><span id="tokensLeft_1"></td>
+                      <td><span id="myBalance_1"></td>
+                      <td>0.001 ETH</td>
+                    </tr>
+                </table>
+                <br>
+                <button type="button" class="btn btn-success" href="#" data-toggle="modal" data-target="#exampleModal">
+                  Buy <%= tokenSymbol %> tokens
+                </button>
+              </div>
+
+              <div class="col my-auto">
+                <img src="../uploads/<%= propertyImage %>" class="img-fluid" alt="Responsive image" width="600px">
+              </div>
+            </div>
+            
+            <br><br>
+
+            <div class="row text-center mx-3">
+              <div class="col">
+                <img src="../uploads/map.png" class="img-fluid">
+                <br><br>
+              </div>
+            </div>
+
+          </div>
+
+        <br><br><br>
+        
+      </div>
+    
+    <!-- End of div main-content  -->
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Buy <%= tokenSymbol %> tokens</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <br>
+
+          <div class="container">
+            <table class="table align-items-center">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Total supply</th>
+                  <th scope="col">Tokens left</th>
+                  <th scope="col">My balance</th>
+                  <th scope="col"><%= tokenSymbol %> token price</th>
+                </tr>
+              </thead>
+              <tbody class="list">
+                <tr>
+                  <td><span id="totalSupply_2"></td>
+                  <td><span id="tokensLeft_2"></td>
+                  <td><span id="myBalance_2"></td>
+                  <td>0.001 ETH</td>
+                </tr>
+            </table>
+          </div>
+
+
+          <div class="modal-body">
+            <p>Account balance: <span id="ethBalance"></span></p>
+            <input class="form-control" type="number" id="ethAmount" name="propertyImage" placeholder="Amount of ETH to send..." required>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-success" data-dismiss="modal" onclick="buyTokens()">Buy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascripts/purchase.js"></script>
+
+<% include partials/footer.ejs %>

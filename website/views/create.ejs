@@ -1,0 +1,64 @@
+<% include partials/header.ejs%>
+
+      <div class="content">
+        <div class="main-content">
+          <!-- Header-->
+          <div class="header bg-white pb-8 pt-5 pt-md-8">
+            <div class="container-fluid">
+              <div class="header-body">
+                <!-- Page content-->
+                <div class="container">
+                  <h1 class="text-center">
+                    <p style="font-weight:bold; color:black; font-size:25px">Create a tokenized property</p>
+                  </h1>
+                  <form action="/create-property" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Property Name</label>
+                      <input class="form-control" type="text" placeholder="Ex: House 123 in South London" name="propertyName" id="_propertyName" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Price</label>
+                      <input class="form-control" type="text" placeholder="Ex: 100,000" name="propertyPrice" id="_propertyPrice" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Address</label>
+                      <input class="form-control" type="text" placeholder="Ex: 10 Downing Street, LONDON, SW1A 2AA" name="propertyAddress" id="_propertyAddress" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Token Symbol</label>
+                      <input class="form-control" type="text" placeholder="Ex: HSL" name="tokenSymbol" id="_tokenSymbol" required>
+                    </div>
+                    <!--
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Token Total Supply</label>
+                      <input class="form-control" type="number" placeholder="Ex: 100,000,000" name="totalSupply" id="_totalSupply" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Token Price in ETH</label>
+                      <input class="form-control" type="number" placeholder="Ex: 2" name="ethPrice" id="_ethPrice" required>
+                    </div>
+                    -->
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Property Description</label>
+                      <input class="form-control" type="text" placeholder="Ex: Beautiful house in South of London" name="propertyDescription" id="_propertyDescription" required>
+                    </div>
+                    <div class="form-group">
+                      <label style="font-weight:normal; color:black">Property Image</label>
+                      <input class="form-control" type="file" id="imageInput" name="propertyImage" required>
+                    </div>
+                    <br>
+                    <button class="btn btn-primary" type="submit" onclick="createProperty()">CREATE</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <!-- End of div main-content  -->
+    </div>
+
+    <script src="../javascripts/createProperty.js"></script> 
+
+<% include partials/footer.ejs %>
