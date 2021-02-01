@@ -19,7 +19,7 @@ const Property = require('./models/property')
 const User = require('./models/user')
 
 // database name: elad-network
-mongoose.connect('mongodb://localhost/entty', {
+mongoose.connect('mongodb+srv://tello:13dochesterSS@mydbs.boifr.mongodb.net/MyDbs?retryWrites=true&w=majority', {
 // mongoose.connect('mongodb://localhost:27017/elad-network', {
   useNewUrlParser: true
 }, function(error) {
